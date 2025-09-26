@@ -13,9 +13,9 @@ body {
 }
 
 .container {
-  background: #fcfff3;
+  background: rgba(27, 27, 27, 0.527);
   padding: 20px;
-  border: solid 0.2px black;
+  border-radius: 10px;
  
 }
 
@@ -26,6 +26,7 @@ input {
   background: #f5f9eb;
   width: 300px;
   margin-right: 10px;
+  border-radius: 10px;
 }
 
 button {
@@ -52,6 +53,8 @@ button {
   padding: 7px 20px;
   margin: 10px;
   font-family: sans-serif;
+  color: black;
+  border-radius: 10px;
 }
 
 .close {

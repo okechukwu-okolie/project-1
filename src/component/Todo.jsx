@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../component/todo.css";
+// import "../component/todo.css";
+import { BiTrash } from "react-icons/bi";
 
 const Todo = () => {
   const [todos, setTodos] = useState([]);
@@ -9,8 +10,24 @@ const Todo = () => {
     setInput(e.target.value);
   };
 
-  const handleSubmit = ()=>{
-    
+  const handleSubmit = (text)=>{
+    if(text.trim() == ''){
+        return alert('put in a todo activity')
+    }
+
+    const todoInputs ={
+        text,
+        id: new Date().getTime()
+    }
+    const newTodoArray = [...todos,todoInputs]
+    console.log(newTodoArray)
+    setTodos(newTodoArray)
+    setInput('')
+  }
+
+  const removeTodo=(id)=>{
+    const removedItem = todos.filter((todo)=>todo.id !== id)
+    setTodos(removedItem)
   }
 
   return (
@@ -22,7 +39,14 @@ const Todo = () => {
         onChange={inputHandler}
       />
 
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={()=>handleSubmit(input)}>Submit</button>
+
+      <ul className="todos-list">
+        {todos.map((todo)=><li className="todo" key={todo.id}>
+            <span>{todo.text}</span>
+            <button className="close" onClick={()=>removeTodo(todo.id)}><BiTrash/></button>
+        </li>)}
+      </ul>
     </div>
   );
 };
