@@ -3,6 +3,9 @@ import Counter from './component/Counter'
 import Todo from './component/Todo'
 import Meals from './component/Meals'
 import Calculator from './component/Calculator'
+import ColourToggler from './component/ColourToggler'
+import HiddenSearchBar from './component/HiddenSearchBar'
+import Testimonials from './component/Testimonials'
 
 const App = () => {
   return (
@@ -10,7 +13,10 @@ const App = () => {
       {/* <Counter/> */}
       {/* <Todo/> */}
       {/* <Meals/> */}
-      <Calculator/>
+      {/* <Calculator/> */}
+      {/* <ColourToggler/> */}
+      {/* <HiddenSearchBar/> */}
+      <Testimonials/>
     </div>
   )
 }
